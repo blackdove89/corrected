@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spProcessReissueCases]
+alter PROCEDURE [dbo].[spProcessReissueCases]
     @bStatusUpdate          BIT = 1
    ,@bSendMail              BIT = 1
    ,@bSendFile              BIT = 1
