@@ -81,7 +81,7 @@ BEGIN
 
    DECLARE @bExists                 SMALLINT
    DECLARE @CR                      CHAR(1)
-   DECLARE @FName                   VARCHAR(1000)
+   DECLARE @FName                   VARCHAR(100)
    DECLARE @FPrefix                 VARCHAR(100)
    DECLARE @s                       VARCHAR(200)
    DECLARE @sAttachments            VARCHAR(150) = ''
@@ -92,7 +92,7 @@ BEGIN
    DECLARE @sMFDataDir              VARCHAR(30)
    DECLARE @sMFDatasetName          VARCHAR(100)
    DECLARE @sMsg                    VARCHAR(2000)
-   DECLARE @sQuery                  VARCHAR(1000) = ''
+   DECLARE @sQuery                  VARCHAR(100) = ''
 
    DECLARE @n                       INT
    DECLARE @sErrorText              VARCHAR(2000)
