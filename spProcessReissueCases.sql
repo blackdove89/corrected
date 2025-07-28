@@ -81,11 +81,11 @@ BEGIN
 
    DECLARE @bExists                    SMALLINT
    DECLARE @CR                         CHAR(1)
-   DECLARE @FName                      VARCHAR(100)
+   DECLARE @FName                      VARCHAR(1000)
    DECLARE @FPrefix                    VARCHAR(100)
    --DECLARE @nNewFileSize               NUMERIC(24) Satish: Unused variable.
    --DECLARE @nOldFileSize               NUMERIC(24) Satish: Unused variable.
-   DECLARE @s                          VARCHAR(20)
+   DECLARE @s                          VARCHAR(200)
    DECLARE @sAttachments               VARCHAR(150)
    DECLARE @sCommand                   VARCHAR(128)
    DECLARE @sDataDir                   VARCHAR(30)
@@ -93,10 +93,10 @@ BEGIN
    DECLARE @sDbName                    VARCHAR(30)
    DECLARE @sMFDataDir                 VARCHAR(100)
    DECLARE @sMFDatasetName             VARCHAR(100)
-   DECLARE @sMsg                       VARCHAR(200)
+   DECLARE @sMsg                       VARCHAR(2000)
    DECLARE @sQuery                     VARCHAR(200)
    DECLARE @n                          INT
-   DECLARE @sErrorText                 VARCHAR(100)
+   DECLARE @sErrorText                 VARCHAR(1000)
    DECLARE @StartTime                  DATETIME
 
    DECLARE @Recipients                 VARCHAR(1000)
