@@ -81,7 +81,7 @@ BEGIN
 
    DECLARE @bExists                 SMALLINT
    DECLARE @CR                      CHAR(1)
-   DECLARE @FName                   VARCHAR(100)
+   DECLARE @FName                   VARCHAR(1000)
    DECLARE @FPrefix                 VARCHAR(100)
    DECLARE @s                       VARCHAR(200)
    DECLARE @sAttachments            VARCHAR(150) = ''
