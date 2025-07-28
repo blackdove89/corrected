@@ -93,7 +93,7 @@ BEGIN
    DECLARE @sDbName                    VARCHAR(30)
    DECLARE @sMFDataDir                 VARCHAR(100)
    DECLARE @sMFDatasetName             VARCHAR(100)
-   DECLARE @sMsg                       VARCHAR(2000)
+   DECLARE @sMsg                       VARCHAR(200)
    DECLARE @sQuery                     VARCHAR(200)
    DECLARE @n                          INT
    DECLARE @sErrorText                 VARCHAR(1000)
