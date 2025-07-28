@@ -9,9 +9,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spGenerateMFData]
+ALTER PROCEDURE [dbo].[spGenerateMFData]
     @ClaimNumber                   VARCHAR(9)            = NULL
-   ,@Filename                      VARCHAR(100)
+   ,@Filename                      VARCHAR(1000)
    ,@bTest                         TINYINT               = 0
    ,@bUpdate                       TINYINT               = 0
    ,@bSendMail                     BIT                   = 0
@@ -93,7 +93,7 @@ BEGIN
    DECLARE @sCR                     VARCHAR(2)
    DECLARE @cs                      CURSOR
    DECLARE @dtNow                   DATETIME
-   DECLARE @FName                   VARCHAR(100)
+   DECLARE @FName                   VARCHAR(1000)
    DECLARE @sCaseType               VARCHAR(1)
    DECLARE @nWriteMode              TINYINT
    DECLARE @rec1                    VARCHAR(2000)
