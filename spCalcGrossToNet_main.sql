@@ -1086,9 +1086,7 @@ BEGIN
          IF @rc < 0
          BEGIN
             SET @str = 'spAddGrossToNetHB returned ' + LTRIM(STR(@rc)) + 
-                       ' for CaseId ' + CAST(@CaseId AS VARCHAR(20)) +
-                       ' with HBCode ' + ISNULL(@HBCode, 'NULL') +
-                       ' and EffectiveDate ' + ISNULL(CONVERT(VARCHAR(10), @dt, 101), 'NULL')
+                       ' for CaseId ' + CAST(@CaseId AS VARCHAR(20)) 
             INSERT INTO tblErrorLog (CaseId, Process, ErrorMsg) VALUES (@CaseId, 'spCalcGrossToNet_main', @str)
             DEALLOCATE @cs
             RETURN @rc
@@ -1119,8 +1117,7 @@ BEGIN
       IF @rc < 0
       BEGIN
          SET @str = 'spAddGrossToNetCSRS returned ' + LTRIM(STR(@rc)) + 
-                    ' for CaseId ' + CAST(@CaseId AS VARCHAR(20)) +
-                    ' with AnnuityStart ' + ISNULL(CONVERT(VARCHAR(10), @AnnuityStart, 101), 'NULL')
+                    ' for CaseId ' + CAST(@CaseId AS VARCHAR(20)) 
          INSERT INTO tblErrorLog (CaseId, Process, ErrorMsg) VALUES (@CaseId, 'spCalcGrossToNet_main', @str)
          RETURN @rc
       END
@@ -1148,8 +1145,7 @@ BEGIN
       IF @rc < 0
        BEGIN
          SET @str = 'spAddGrossToNetFERS returned ' + ISNULL(LTRIM(STR(@rc)), '') + 
-                    ' for CaseId ' + CAST(@CaseId AS VARCHAR(20)) +
-                    ' with G2NCaseType ' + LTRIM(STR(@G2NCaseType))
+                    ' for CaseId ' + CAST(@CaseId AS VARCHAR(20))
          INSERT INTO tblErrorLog (CaseId, Process, ErrorMsg) VALUES (@CaseId, 'spCalcGrossToNet_main', @str)
          RETURN @rc
        END
@@ -1482,9 +1478,7 @@ BEGIN
          IF @rc < 0 
          BEGIN
             SET @str = 'spAddGrossToNetLI returned ' + LTRIM(STR(@rc)) + 
-                       ' for CaseId ' + CAST(@CaseId AS VARCHAR(20)) +
-                       ' with LIBase ' + LTRIM(STR(@LIBase)) +
-                       ' and OptionA ' + LTRIM(STR(@OptionA))
+                       ' for CaseId ' + CAST(@CaseId AS VARCHAR(20))
             INSERT INTO tblErrorLog (CaseId, Process, ErrorMsg) VALUES (@CaseId, 'spCalcGrossToNet_main', @str)
             DEALLOCATE @cs
             RETURN @rc
