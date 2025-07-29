@@ -171,7 +171,7 @@ BEGIN
    DECLARE @rc                      INT   
    DECLARE @SurvivorRate            DECIMAL(3,2)
    DECLARE @val                     DECIMAL(14,5)
-   DECLARE @str                     VARCHAR(1000)  -- INCREASED FROM 250
+   DECLARE @str                     VARCHAR(500)  -- INCREASED FROM 250
 
 
    DECLARE @LIBase                  SMALLINT
