@@ -1,5 +1,4 @@
-USE [RETIRE]
-GO
+
 
 /****** Object:  StoredProcedure [dbo].[spCalcGrossToNet_main]    Script Date: 7/18/2025 3:24:50 PM ******/
 SET ANSI_NULLS ON
@@ -10,7 +9,7 @@ GO
 
 
 
-ALTER PROCEDURE [dbo].[spCalcGrossToNet_main]
+CREATE PROCEDURE [dbo].[spCalcGrossToNet_main]
     @CaseId                        INT
    ,@CSRSRate                      INT
    ,@CSRSTime                      DECIMAL(5,3)
@@ -1789,12 +1788,13 @@ BEGIN
             UserId = @Login AND CaseId = @CaseId
          ORDER BY 
             EffectiveDate
+            END
    END TRY
-BEGIN CATCH
+    BEGIN CATCH
 
 SET @str = 'Error in spCalcGrossToNet_main for CaseId ' + CAST(@CaseId AS VARCHAR(20)) + ': ' + ERROR_MESSAGE()
 INSERT INTO tblErrorLog (CaseId, Process, ErrorMsg) VALUES (@CaseId, 'spCalcGrossToNet_main', @str)
 
-
-END CATCH
+    END CATCH
+END
 GO
