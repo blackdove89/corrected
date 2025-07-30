@@ -150,7 +150,8 @@ as
 
    ****************************************************************************/
 
-BEGIN
+BEGIN 
+	BEGIN TRY
 
    DECLARE @age                     TINYINT
    DECLARE @Age62Date               DATE
@@ -171,7 +172,7 @@ BEGIN
    DECLARE @rc                      INT   
    DECLARE @SurvivorRate            DECIMAL(3,2)
    DECLARE @val                     DECIMAL(14,5)
-   DECLARE @str                     VARCHAR(500)  -- INCREASED FROM 250
+   DECLARE @str                     VARCHAR(250)  
 
 
    DECLARE @LIBase                  SMALLINT
@@ -1788,6 +1789,12 @@ BEGIN
             UserId = @Login AND CaseId = @CaseId
          ORDER BY 
             EffectiveDate
-   END
-END
+   END TRY
+BEGIN CATCH
+
+SET @str = 'Error in spCalcGrossToNet_main for CaseId ' + CAST(@CaseId AS VARCHAR(20)) + ': ' + ERROR_MESSAGE()
+INSERT INTO tblErrorLog (CaseId, Process, ErrorMsg) VALUES (@CaseId, 'spCalcGrossToNet_main', @str)
+
+
+END CATCH
 GO
