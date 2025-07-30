@@ -1,4 +1,5 @@
-
+USE [RETIRE]
+GO
 
 /****** Object:  StoredProcedure [dbo].[spCalcGrossToNet_main]    Script Date: 7/18/2025 3:24:50 PM ******/
 SET ANSI_NULLS ON
@@ -9,7 +10,7 @@ GO
 
 
 
-CREATE PROCEDURE [dbo].[spCalcGrossToNet_main]
+ALTER PROCEDURE [dbo].[spCalcGrossToNet_main]
     @CaseId                        INT
    ,@CSRSRate                      INT
    ,@CSRSTime                      DECIMAL(5,3)
